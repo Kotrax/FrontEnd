@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <title>Produtos</title>
+</head>
+<body>
+    <h1>Controle de Produtos</h1>
+    
+    <div id="menu">
+    <button id="btnConsultar">Consultar</button>
+    <button id="btnIncluir">Incluir</button>
+    <button id="btnCadastrar"><a href="cadastro.html"> Cadastrar</a></button>
+    <button>Alterar</button>
+    <button>Excluir</button>
+    <button><a href="../index.html">Voltar</a></button>
+    </br></br>
+    </div>
+    <div>
+        <table id="customers">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th> 
+                    <th>Descrição</th>
+                    <th>Fabricante</th>
+                    <th>Qtda</th>
+                    <th>Preco</th>
+                    <th>Custo</th>
+                    <th>Data e Hora</th>
+                    <th>Controle</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyList"></tbody>
+        </table>
+    </div>
+
+    <div id='containerModal'>
+
+        
+        <div class='modal'>
+
+            <div><button id="FecharModal"> X </button></div>
+
+            <br>
+            
+            <h2>Controle de Produtos</h2>
+            
+            
+            <div class='containerDados'>
+                <p>Código:  <input type="text" value="" id="inpCod" /> </p>
+                <p>Nome: <input type="text" value="" id="inpNome" /> </p>
+                <p>Descrição: <input type="text" value="" id="inpDescri" /></p>
+                <p>Fabricante: <input type="text" value="" id="inpFab" /></p>
+                <p>Quantidade: <input type="text" value="" id="inpQtda" /></p>
+                <p>Preço: <input type="text" value="" id="inpPreco"/></p>
+                <p>Custo: <input type="text" value="" id="inpCusto"/></p>
+                <p>Data: <input type="text" value="" id="inpData"/></p>
+            </div>
+
+        <footer id="baixo"> 
+            <button id="Cancelar"><a href="../html/produtos.html">Cancelar</a></button>
+            <button id="delModal">deletar</button>
+            <button id="CadModal"> Cadastrar </button>
+        </footer>
+
+        </div>
+    </div>
+
+
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="../node_modules/axios/dist/axios.js"></script>
+    <script src="../src/scriptProds.js"></script>
+</body>
+</html>
