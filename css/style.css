@@ -3,43 +3,32 @@
   border-collapse: collapse;
   width: 100%;
 }
-
 #customers td, #customers th {
-  border: 1px solid #a4e4f8;
+  border: 1px solid #000000;
   padding: 8px;
 }
-
-#customers tr:nth-child(even){background-color: hsl(202, 91%, 91%);}
-
-#customers tr:hover {background-color: #9fbcc0;}
-
+#customers tr:nth-child(even){background-color: hsl(0, 0%, 100%);}
+#customers tr:hover {background-color: #e8e8e8;}
 #customers th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: hsl(202, 100%, 70%);
+  background-color: hsl(37, 100%, 50%);
   color: rgb(0, 32, 61);
 }
-
 #controler{
   text-align: center;
 }
-
 .icons{
   height: 16px;
   width: 16px;
   margin-left: 2px;
   margin-right: 2px;
 }
-
 #menu a{
   text-decoration: none;
-  color: #000;
+  color: #000000;
 }
-
 #btnCancel{
-  display: inline-block;
-  
-
-    
+  display: inline-block;   
 }

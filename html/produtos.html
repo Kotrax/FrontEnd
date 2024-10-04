@@ -10,7 +10,6 @@
 </head>
 <body>
     <h1>Controle de Produtos</h1>
-    
     <div id="menu">
     <button id="btnConsultar">Consultar</button>
     <button id="btnIncluir">Incluir</button>
@@ -38,19 +37,11 @@
             <tbody id="tbodyList"></tbody>
         </table>
     </div>
-
     <div id='containerModal'>
-
-        
         <div class='modal'>
-
             <div><button id="FecharModal"> X </button></div>
-
             <br>
-            
             <h2>Controle de Produtos</h2>
-            
-            
             <div class='containerDados'>
                 <p>Código:  <input type="text" value="" id="inpCod" /> </p>
                 <p>Nome: <input type="text" value="" id="inpNome" /> </p>
@@ -61,17 +52,13 @@
                 <p>Custo: <input type="text" value="" id="inpCusto"/></p>
                 <p>Data: <input type="text" value="" id="inpData"/></p>
             </div>
-
         <footer id="baixo"> 
-            <button id="Cancelar"><a href="../html/produtos.html">Cancelar</a></button>
+            <button id="FecharModal2">Cancelar</a></button>
             <button id="delModal">deletar</button>
             <button id="CadModal"> Cadastrar </button>
         </footer>
-
         </div>
     </div>
-
-
     <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
     <script src="../node_modules/axios/dist/axios.js"></script>
     <script src="../src/scriptProds.js"></script>

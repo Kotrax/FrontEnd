@@ -1,9 +1,8 @@
-// Referências do DOM HTML
-
 const btnConsultar = document.getElementById('btnConsultar');
 const tbodyList = document.getElementById('tbodyList');
 const containerModal = document.getElementById('containerModal');
 const FecharModal = document.getElementById('FecharModal');
+const FecharModal2 = document.getElementById('FecharModal2');
 const CadModal = document.getElementById('CadModal');
 const delModal = document.getElementById('delModal')
 
@@ -15,11 +14,6 @@ const inpPreco = document.getElementById('inpPreco')
 const inpCusto = document.getElementById('inpCusto')
 const inpCod = document.getElementById('inpCod')
 const inpData = document.getElementById('inpData')
-
-
-/// Lógica de programação 
-
-
 
 let codDelete;
 
@@ -64,9 +58,6 @@ async function consultar(){
   } 
 }
 
-
-
-
 async function create(){
 
   try{
@@ -99,8 +90,7 @@ async function create(){
 
     async function deletePro(td){
       let dateselection = td.parentElement.parentElement;
-      // console.log(dateselection);
-      // console.log(dateselection.cells[0].innerHTML);
+ 
       containerModal.style.display = 'block';
     
       inpCod.value = dateselection.cells[0].innerHTML;
@@ -114,48 +104,69 @@ async function create(){
       codDelete = inpCod.value;
     }
 
-    
-    delModal.onclick = async ()=>{
+      delModal.onclick = async ()=>{
+      const response = await api.delete('produtos/'+codDelete);
       try {
-        const response = await api.delete('produtos/'+codDelete);
-       if(response.status == 200){
         Swal.fire({
-          icon: "success",
-          title: 'Registro deletado com sucesso!',
-        });
-        containerModal.style.display = 'none';
-        consultar();
-       };
-        
-        
-      } catch (error) {
-        if (error.response) {
-          // Verifica se o status é 409 (Conflict)
-          if (error.response.status === 409) {
+          title: "Tem certeza que deseja deletar?",
+          text: "Você não poderá reverter depois.",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Sim!"
+        }).then((result) => {
+          if (result.isConfirmed) {
             Swal.fire({
-              icon: "error",
-              title: error.response.data.msg,
+              title: "Deletado com sucesso.",
+              text: "Seu arquivo foi deletado.",
+              icon: "success"
             });
-            containerModal.style.display = 'none'; 
-          } else {
-            alert('Erro ao deletar o produto. Tente novamente.');
-          }
-        } else {
-          // Tratamento para erros de conexão ou outros problemas
-          console.error('Erro na requisição:', error);
-          alert('Erro de conexão com o servidor.');      
+          
+        ;
+        if(response.status == 200){
+          Swal.fire({
+            icon: "successo ",
+            title: 'Registro deletado com sucesso',
+          });
+          containerModal.style.display = 'none'; 
+          consultar();
+        
+         };
+        }else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire({
+            title: "Cancelled",
+            text: "Your imaginary file is safe :)",
+            icon: "error"
+          });
         }
-      }
-    }
+         } )}
+      catch (error) {
+          if (error.response) {
+            // Verifica se o status é 409 (Conflict)
 
+            if (error.response.status === 409) {
+              Swal.fire({
+                icon: "error",
+                title: error.response.data.msg,
+              });
+              containerModal.style.display = 'none'; 
+            } else {
+              alert('Erro ao deletar o produto. Tente novamente.');
+            }
+          } else {
+            // Tratamento para erros de conexão ou outros problemas
+            
+            console.error('Erro na requisição:', error);
 
-    
+            alert('Erro de conexão com o servidor.');      
+          }
+       }}
 
-    
-    /*********************************************************************/
-    //   Botões                                                           /
-    /*********************************************************************/
-
+//Botões
 
 FecharModal.onclick = ()=>{
   containerModal.style.display = 'none'; 
@@ -173,3 +184,6 @@ btnIncluir.onclick = ()=>{
 btnConsultar.onclick = async ()=>{
   consultar();
 }
+FecharModal2.onclick = ()=>{
+  containerModal.style.display = 'none'; 
+};
