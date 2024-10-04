@@ -3,6 +3,7 @@ const tbodyList = document.getElementById('tbodyList');
 const containerModal = document.getElementById('containerModal');
 const FecharModal = document.getElementById('FecharModal');
 const FecharModal2 = document.getElementById('FecharModal2');
+const AltModal = document.getElementById('AltModal');
 const CadModal = document.getElementById('CadModal');
 const delModal = document.getElementById('delModal')
 
@@ -46,8 +47,8 @@ async function consultar(){
                       '<td>' + dados[i].qtda + '</td>' +
                       '<td>' + dataFormatada + '</td>' +       
                       '<td id="controler">'+
-                                '<img src="../imagens/editar.png" class="icons">'  + 
-                                '<a id="btnLixo" onclick="deletePro(this)"><img src="../imagens/lixo.png" class="icons"></a>' +
+                                '<a id="btnEditar" onclick="updateProd(this)"><img src="../imagens/editar.png" class="icons"></a>'  + 
+                                '<a id="btnLixo" onclick="deleteProd(this)"><img src="../imagens/lixo.png" class="icons"></a>' +
                                 '<img src="../imagens/voltar.png" class="icons">' + 
                           '</td>' 
         rows += tr;
@@ -88,7 +89,7 @@ async function create(){
 
     };
 
-    async function deletePro(td){
+    async function deleteProd(td){
       let dateselection = td.parentElement.parentElement;
  
       containerModal.style.display = 'block';
@@ -102,7 +103,23 @@ async function create(){
       inpCusto.value = dateselection.cells[6].innerHTML;
       inpData.value = dateselection.cells[7].innerHTML;  
       codDelete = inpCod.value;
-    }
+    };
+
+    async function updateProd(td) {
+      let dateselection = td.parentElement.parentElement;
+  
+      containerModal.style.display = 'block';
+
+      inpCod.value = dateselection.cells[0].innerHTML;
+      inpNome.value = dateselection.cells[1].innerHTML;
+      inpDescri.value = dateselection.cells[2].innerHTML;
+      inpQtda.value = dateselection.cells[3].innerHTML;
+      inpFab.value = dateselection.cells[4].innerHTML;
+      inpPreco.value = dateselection.cells[5].innerHTML;
+      inpCusto.value = dateselection.cells[6].innerHTML;
+      inpData.value = dateselection.cells[7].innerHTML;
+      codUpdate = inpCod.value;
+    };
 
       delModal.onclick = async ()=>{
       const response = await api.delete('produtos/'+codDelete);
@@ -175,8 +192,6 @@ FecharModal.onclick = ()=>{
 CadModal.onclick = ()=>{
   create();
 };
-
-
 btnIncluir.onclick = ()=>{
   containerModal.style.display = 'block';
 };
@@ -185,5 +200,8 @@ btnConsultar.onclick = async ()=>{
   consultar();
 }
 FecharModal2.onclick = ()=>{
+  containerModal.style.display = 'none'; 
+};
+AltModal.onclick = ()=>{
   containerModal.style.display = 'none'; 
 };
