@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; }
+  
+  body {
+    background: linear-gradient( #050505,#050505,#929393); }
+  
+  a {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    cursor: default;
+    color: #838ea7; }
+  
+  nav {
+    width: 100%;
+    top: 30%;
+    left: 42%;
+    background-color: #FEFEFE;
+    position: absolute;
+    border-radius: 2px;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    width: 300px; }
+  
+  nav ul li ul {
+    display: none;
+    margin-top: 20px; }
+    nav ul li ul li {
+      display: block; }
+      nav ul li ul li:hover {
+        background-color: #ffffff; }
+      nav ul li ul li svg {
+        margin-left: 20px;
+        margin-right: 20px; }
+  
+  nav li li {
+    background-color: #ffffff; }
+  
+  .home {
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+    border-bottom: 1px #d7d9dd solid;
+    position: relative; }
+    .home svg {
+      width: 20px;
+      height: 20px;
+      position: relative;
+      top: 4px; }
+  
+  .settings {
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    border-top: 1px #d7d9dd solid; }
+    .settings svg {
+      width: 20px;
+      height: 20px;
+      position: relative;
+      top: 4px; }
+  
+  .messages svg {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 4px; }
+  .hamburger {
+    margin-right: 20px;
+    margin-left: 20px; }
+  
+  .arrow {
+    width: 0;
+    height: 0;
+    margin-left: 275px;
+    border-right: 9px solid transparent;
+    border-left: 9px solid transparent;
+    border-bottom: 9px solid #FEFEFE;
+    position: absolute;
+    top: -9px; }
+  
+  .fa-chevron-up {
+    margin-left: 110px; }
+  
+  .marked {
+    background-color: #3FA6FD;
+    border-radius: 2px; }
+  
+  .marked1 {
+    color: #ffffff; }
+  
+  .rotate {
+    moz-transition: all 0.3s linear;
+    webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear; }
+  
+  .rotate.down {
+    moz-transform: rotate(180deg);
+    webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  
+  /*# sourceMappingURL=main.css.map */
+  button{
+    padding: 15px 15px 15px;
+    border: none;
+    font-family: 'Lucida Sans';
+    color: #3498db; 
+    background-color: #ffffff;
+}
+a{
+    color: #020202;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #072586;
+    text-decoration: none;
+}
+#btn1{
+  background-image: url('/assets/car.png'); 
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: left;
+  padding-left: 30px;
+ }
+ #btn2{
+  background-image: url('/assets/client.png');
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: left;
+  padding-left: 30px;
+ }
+ #btn3{
+  background-image: url('/assets/money.png'); 
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: left;
+  padding-left: 30px;
+ }

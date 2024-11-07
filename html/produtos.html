@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <title>Produtos</title>
+</head>
+<body>
+    <h1>Controle de Produtos</h1>
+    <button id="btnConsultar">Consultar</button>
+    <button id="btnIncluir">Cadastrar</button>
+    <button><a href="../newindex.html">Voltar</a></button>
+    </br></br>
+        <table id="customers">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Fabricante</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                    <th>Custo</th>
+                    <th>Data e Hora</th>
+                    <th>Controle</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyList"></tbody>
+        </table>
+    </div>
+
+
+    <div id='containerModal'>
+        <div class='modal'>
+            <h1>CADASTRO DE PRODUTOS</h1>
+            <div class='containerDados'>
+                <p>Código do produto: <input  type="text"value=""id="inpCod"/>  </p>
+                <p>Nome:       <input  type="text"value=""id="inpNome"/>  </p>
+                <p>Descrição:  <input type="text" value="" id="inpDesc" /> </p>
+                <p>Fabricante: <input type="text" value="" id="inpFab" />  </p>
+                <p>quantidade: <input type="text" value="" id="inpQtda" /> </p>
+                <p>Preço:      <input type="text" value="" id="inpPreco"/>  </p>
+                <p>Custo:      <input type="text" value="" id="inpCusto" /> </p>
+                <p>Data: <input type="text" value="" id="inpData"/></p>
+                <br>
+                <button id="CadModal" >Cadastrar</button>
+                <button id="DelModal">Deletar</button>
+                <button id="AltModal">Alterar</button>
+                <button id="FecharModal">Fechar</button>
+
+            </div>
+        </div>
+    </div>
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="../node_modules/axios/dist/axios.js"></script>
+    <script src="../src/scriptProds.js"></script>
+</body>
+</div>
+</html>
